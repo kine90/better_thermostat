@@ -142,7 +142,7 @@ async def trigger_trv_change(self, event):
             and self.real_trvs[entity_id]["hvac_mode"] is not HVACMode.OFF
             and self.window_open is False
         ):
-            _LOGGER.debug(
+            _LOGGER.warning(
                 f"better_thermostat {self.name}: TRV {entity_id} decoded TRV target temp changed from {self.bt_target_temp} to {_new_heating_setpoint}"
             )
             if (

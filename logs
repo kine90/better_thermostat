@@ -1,0 +1,22 @@
+#16:29:00 went from 19 to 20
+2022-11-23 16:10:17.177 DEBUG (MainThread) [custom_components.better_thermostat.utils.controlling] better_thermostat b_termoMarco - TRV climate.termo_marco_thermostat: Done control_trv task
+2022-11-23 16:13:15.495 DEBUG (MainThread) [custom_components.better_thermostat.utils.controlling] better_thermostat b_termoMarco: climate.termo_marco_thermostat the real TRV did not respond to the target temperature change
+#!!!!!!
+2022-11-23 16:29:00.559 DEBUG (MainThread) [custom_components.better_thermostat.events.trv] better_thermostat b_termoMarco: TRV climate.termo_marco_thermostat decoded TRV target temp changed from 19.2 to 20.0
+#!!!!!!
+2022-11-23 16:29:00.559 DEBUG (MainThread) [custom_components.better_thermostat.utils.controlling] better_thermostat b_termoMarco - TRV climate.termo_marco_thermostat: Entering control_trv task
+2022-11-23 16:29:03.801 DEBUG (MainThread) [custom_components.better_thermostat.utils.controlling] better_thermostat b_termoMarco - TRV climate.termo_marco_thermostat: Done control_trv task
+2022-11-23 16:29:05.963 DEBUG (MainThread) [custom_components.better_thermostat.utils.controlling] better_thermostat b_termoMarco - TRV climate.termo_marco_thermostat: Entering control_trv task
+2022-11-23 16:29:05.963 DEBUG (MainThread) [custom_components.better_thermostat.utils.controlling] better_thermostat b_termoMarco: TO TRV set_temperature: climate.termo_marco_thermostat from: 22.200000000000003 to: 22.200000000000003
+2022-11-23 16:29:09.200 DEBUG (MainThread) [custom_components.better_thermostat.utils.controlling] better_thermostat b_termoMarco - TRV climate.termo_marco_thermostat: Done control_trv task
+2022-11-23 16:29:10.080 DEBUG (MainThread) [custom_components.better_thermostat.events.temperature] better_thermostat b_termoMarco: external_temperature changed from 18.9 to 19.0
+2022-11-23 16:29:10.086 DEBUG (MainThread) [custom_components.better_thermostat.utils.controlling] better_thermostat b_termoMarco - TRV climate.termo_marco_thermostat: Entering control_trv task
+2022-11-23 16:29:10.087 DEBUG (MainThread) [custom_components.better_thermostat.utils.controlling] better_thermostat b_termoMarco: TO TRV set_temperature: climate.termo_marco_thermostat from: 22.200000000000003 to: 22.1
+2022-11-23 16:29:15.047 DEBUG (MainThread) [custom_components.better_thermostat.utils.controlling] better_thermostat b_termoMarco - TRV climate.termo_marco_thermostat: Done control_trv task
+2022-11-23 16:30:10.081 DEBUG (MainThread) [custom_components.better_thermostat.events.temperature] better_thermostat b_termoMarco: external_temperature changed from 19.0 to 18.9
+2022-11-23 16:30:10.088 DEBUG (MainThread) [custom_components.better_thermostat.utils.controlling] better_thermostat b_termoMarco - TRV climate.termo_marco_thermostat: Entering control_trv task
+2022-11-23 16:30:10.088 DEBUG (MainThread) [custom_components.better_thermostat.utils.controlling] better_thermostat b_termoMarco: TO TRV set_temperature: climate.termo_marco_thermostat from: 22.1 to: 22.200000000000003
+2022-11-23 16:30:16.078 DEBUG (MainThread) [custom_components.better_thermostat.utils.controlling] better_thermostat b_termoMarco - TRV climate.termo_marco_thermostat: Done control_trv task
+2022-11-23 16:31:10.087 DEBUG (MainThread) [custom_components.better_thermostat.events.temperature] better_thermostat b_termoMarco: external_temperature changed from 18.9 to 19.0
+2022-11-23 16:31:10.093 DEBUG (MainThread) [custom_components.better_thermostat.utils.controlling] better_thermostat b_termoMarco - TRV climate.termo_marco_thermostat: Entering control_trv task
+2022-11-23 16:31:10.093 DEBUG (MainThread) [custom_components.better_thermostat.utils.controlling] better_thermostat b_termoMarco: TO TRV set_temperature: climate.termo_marco_thermostat from: 22.200000000000003 to: 22.1

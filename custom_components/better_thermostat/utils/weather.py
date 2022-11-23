@@ -55,6 +55,7 @@ def check_weather_prediction(self) -> bool:
     None
             if not successful
     """
+    _LOGGER.debug(f"better_thermostat {self.name}: Checking weather predictions.")
     if self.weather_entity is None:
         _LOGGER.warning(f"better_thermostat {self.name}: weather entity not available.")
         return None
@@ -103,7 +104,11 @@ async def check_ambient_air_temperature(self):
     None
             if not successful
     """
+    _LOGGER.debug(f"better_thermostat {self.name}: Checking ambient temperature.")
     if self.outdoor_sensor is None:
+        _LOGGER.debug(
+            f"better_thermostat {self.name}: No outdoor temp sensor set."
+        )
         return None
 
     if self.off_temperature is None or not isinstance(self.off_temperature, float):
@@ -125,7 +130,7 @@ async def check_ambient_air_temperature(self):
     # create a list from valid data in historic_sensor_data
     valid_historic_sensor_data = []
     invalid_sensor_data_count = 0
-    if historic_sensor_data is not None:
+    if historic_sensor_data is None:
         _LOGGER.warning(
             f"better_thermostat {self.name}: {self.outdoor_sensor} has no historic data."
         )

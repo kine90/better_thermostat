@@ -133,10 +133,20 @@ class BetterThermostat(ClimateEntity, RestoreEntity, ABC):
             )
             self.async_write_ha_state()
             await self.control_queue_task.put(self)
+        _LOGGER.debug(
+                "better_thermostat %s - set_temp_temperature: bt_target_temp =  %s",
+                self.name,
+                self.bt_target_temp
+        )
 
     async def savetarget_temperature(self):
         self._saved_temperature = self.bt_target_temp
         self.async_write_ha_state()
+        _LOGGER.debug(
+                "better_thermostat %s - savetarget_temperature: _saved_temperature =  %s",
+                self.name,
+                self._saved_temperature
+        )
 
     async def restore_temp_temperature(self):
         if self._saved_temperature is not None:
@@ -145,6 +155,11 @@ class BetterThermostat(ClimateEntity, RestoreEntity, ABC):
             )
             self._saved_temperature = None
             self.async_write_ha_state()
+            _LOGGER.debug(
+                "better_thermostat %s - restore_temp_temperature: bt_target_temp =  %s",
+                self.name,
+                self.bt_target_temp
+            )
             await self.control_queue_task.put(self)
 
     @property
@@ -524,6 +539,11 @@ class BetterThermostat(ClimateEntity, RestoreEntity, ABC):
                     self.bt_target_temp = convert_to_float(
                         str(_oldtarget_temperature), self.name, "startup()"
                     )
+                    _LOGGER.debug(
+                    "better_thermostat %s - found old set temperature: =  %s",
+                    self.name,
+                    self.bt_target_temp
+                    )
                 if not self.bt_hvac_mode and old_state.state:
                     self.bt_hvac_mode = old_state.state
                 if old_state.attributes.get(ATTR_STATE_CALL_FOR_HEAT, None) is not None:
@@ -568,7 +588,7 @@ class BetterThermostat(ClimateEntity, RestoreEntity, ABC):
                 self.bt_hvac_mode = HVACMode.OFF
 
             _LOGGER.debug(
-                "better_thermostat %s: Startup config, BT hvac mode is %s, Target temp %s",
+                "better_thermostat %s: Startup config done, BT hvac mode is %s, Target temp %s",
                 self.name,
                 self.bt_hvac_mode,
                 self.bt_target_temp,
@@ -898,6 +918,11 @@ class BetterThermostat(ClimateEntity, RestoreEntity, ABC):
             )
             return
         self.bt_target_temp = _new_setpoint
+        _LOGGER.debug(
+            "better_thermostat %s - Set new target temperature: bt_target_temp =  %s",
+            self.name,
+            self.bt_target_temp
+        )
         self.async_write_ha_state()
         await self.control_queue_task.put(self)
 

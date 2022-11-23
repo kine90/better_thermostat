@@ -58,6 +58,7 @@ async def control_trv(self, heater_entity_id=None):
     -------
     None
     """
+    _LOGGER.debug(f"better_thermostat {self.name} - TRV  {heater_entity_id}: Entering control_trv task")
     async with self._temp_lock:
         self.real_trvs[heater_entity_id]["ignore_trv_states"] = True
         _trv = self.hass.states.get(heater_entity_id)
@@ -182,6 +183,7 @@ async def control_trv(self, heater_entity_id=None):
 
         await asyncio.sleep(3)
         self.real_trvs[heater_entity_id]["ignore_trv_states"] = False
+        _LOGGER.debug(f"better_thermostat {self.name} - TRV  {heater_entity_id}: Done control_trv task")
         return True
 
 
@@ -224,7 +226,7 @@ async def checktarget_temperature(self, heater_entity_id=None):
         ):
             _timeout = 0
             break
-        if _timeout > 120:
+        if _timeout > 180:
             _LOGGER.debug(
                 f"better_thermostat {self.name}: {heater_entity_id} the real TRV did not respond to the target temperature change"
             )
